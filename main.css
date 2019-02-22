@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: #f3f3f3;
+    font-family: sans-serif;
+}
+
+.checkbox-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 100px;
+    height: 40px;
+}
+
+.checkbox-btn input{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 1;
+}
+.checkbox-btn div{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 4px solid #000;
+    border-radius: 4px;
+    
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .5);
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.checkbox-btn div .slide{
+    position: absolute;
+    top: -12%;
+    left: -1%;
+    width: 40px;
+    height: 40px;
+    background: rgb(255, 255, 255);
+    transition: .5s;
+    border-left: 1px solid black;
+}
+
+.checkbox-btn input:checked +
+div .slide{
+    transform: translateX(55px);
+}
+
+.checkbox-btn div 
+.slide:before{
+    content: "Light";
+    position: absolute;
+    top: 7%;
+    left: -60px;
+    text-align: center;
+    width: 60px;
+    height: 85%;
+    line-height: 35px;
+    background-color: #ffffff;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+}
+
+.checkbox-btn div .slide:after{
+    content: "Dark";
+    position: absolute;
+    top: 7%;
+    left: 40px;
+    text-align: center;
+    width: 60px;
+    height: 85%;
+    line-height: 35px;
+    background-color: #000000;
+    font-weight: bold;
+    color: #fff;
+}
